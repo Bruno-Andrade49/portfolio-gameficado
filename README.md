@@ -1,6 +1,6 @@
 # Bruno Andrade · Portfólio
 
-Portfólio de Bruno Andrade, desenvolvedor front-end Pleno (Vue 3 & Nuxt). A home apresenta currículo, projetos e contato; o modo jogo transforma os mesmos projetos em fases de um mundo 3D (three.js + React Three Fiber).
+Meu portfólio, desenvolvedor front-end Pleno (Vue 3 & Nuxt). A home apresenta currículo, projetos e contato; o modo jogo transforma os mesmos projetos em fases de um mundo 3D (three.js + React Three Fiber).
 
 ## Rodando
 
