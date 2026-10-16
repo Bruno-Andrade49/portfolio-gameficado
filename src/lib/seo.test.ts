@@ -20,13 +20,13 @@ describe("siteUrl", () => {
 describe("structuredData", () => {
   const data = structuredData("https://bruno.dev");
   const person = data["@graph"].find((n) => n["@type"] === "Person")!;
-  it("descreve a pessoa com cargo, empresa e perfis", () => {
+  it("descreve a pessoa com cargo e perfis, sem empresa atual", () => {
     expect(person).toMatchObject({
       name: "Bruno Andrade",
       jobTitle: "Desenvolvedor Front-end Pleno",
       url: "https://bruno.dev",
-      worksFor: { name: "Single Software" },
     });
+    expect(person.worksFor).toBeUndefined();
     expect(person.sameAs).toEqual(
       expect.arrayContaining(["https://github.com/Bruno-Andrade49", "https://www.linkedin.com/in/brunoandrade-386b331b6"]),
     );

@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckSquare, Flag } from "@phosphor-icons/react";
+import { ChatCircleDots, CheckSquare, Flag } from "@phosphor-icons/react";
 import Image from "next/image";
 import { jobs } from "@/data/experience";
 import { profile } from "@/data/profile";
@@ -9,12 +9,12 @@ import { Window } from "./Window";
 
 export function QuestsPanel() {
   const close = useGame((s) => s.close);
-  const [current, ...previous] = jobs;
-  const role = current.roles[0];
-  const done = [
-    ...current.roles.slice(1).map((r) => ({ ...r, org: current.company })),
-    ...previous.flatMap((j) => j.roles.map((r) => ({ ...r, org: j.company }))),
-  ];
+  const open = useGame((s) => s.open);
+  const current = jobs.find((j) => j.current);
+  const role = current?.roles[0];
+  const done = jobs.flatMap((j) =>
+    (j === current ? j.roles.slice(1) : j.roles).map((r) => ({ ...r, org: j.company })),
+  );
 
   return (
     <Window title="Missões" onClose={close}>
@@ -28,21 +28,35 @@ export function QuestsPanel() {
             className="object-cover object-[70%_center]"
           />
         </div>
-        <div>
-          <p className="font-mono text-xs text-accent-text">Missão principal em andamento</p>
-          <h3 className="mt-1 font-pixel text-3xl leading-tight">
-            {role.title} na {current.company}
-          </h3>
-          <p className="mt-1 font-mono text-xs text-muted">{role.period}</p>
-          <ul className="mt-4 grid gap-2">
-            {role.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2 text-sm leading-relaxed">
-                <CheckSquare size={18} weight="fill" className="mt-px shrink-0 text-accent-text" />
-                {b}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {current && role ? (
+          <div>
+            <p className="font-mono text-xs text-accent-text">Missão principal em andamento</p>
+            <h3 className="mt-1 font-pixel text-3xl leading-tight">
+              {role.title} na {current.company}
+            </h3>
+            <p className="mt-1 font-mono text-xs text-muted">{role.period}</p>
+            <ul className="mt-4 grid gap-2">
+              {role.bullets.map((b) => (
+                <li key={b} className="flex items-start gap-2 text-sm leading-relaxed">
+                  <CheckSquare size={18} weight="fill" className="mt-px shrink-0 text-accent-text" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div className="self-center">
+            <p className="font-mono text-xs text-accent-text">Nova missão</p>
+            <h3 className="mt-1 font-pixel text-3xl leading-tight">Em busca da próxima missão</h3>
+            <p className="mt-3 max-w-[52ch] leading-relaxed text-muted">
+              Disponível para novas oportunidades como desenvolvedor front-end. Se o seu time precisa de alguém para
+              a próxima fase, me chama.
+            </p>
+            <button className="pixel-btn mt-5" data-variant="primary" onClick={() => open("contact")}>
+              <ChatCircleDots size={16} weight="bold" /> Falar comigo
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="mt-8">

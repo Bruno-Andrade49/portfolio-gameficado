@@ -5,10 +5,12 @@ export const profile = {
   role: "Desenvolvedor Front-end Pleno",
   headline: "Front-end | Vue 3 & Nuxt | React & Nuxt | Wordpress",
   location: "Campina Grande, PB",
+  // Selo discreto no topo da home. Use null para esconder quando estiver empregado.
+  availability: "Disponível para novas oportunidades" as string | null,
   address: { locality: "Campina Grande", region: "PB", country: "BR" },
   bio: "Opa! Sou o Bruno, desenvolvedor frontend movido por curiosidade. Gosto de entender como as coisas funcionam e estou sempre buscando aprender algo novo e encarar desafios que me façam crescer.",
   about: [
-    "Sou desenvolvedor front-end com quase 4 anos de experiência construindo interfaces eficientes, escaláveis e de alta performance. Hoje atuo na evolução de uma plataforma multi-marca em Vue 3 e Nuxt na Single Software, com foco em arquitetura de componentes, performance e padronização entre marcas.",
+    "Sou desenvolvedor front-end com quase 4 anos de experiência construindo interfaces eficientes, escaláveis e de alta performance. Na Single Software, atuei na evolução de uma plataforma multi-marca em Vue 3 e Nuxt, com foco em arquitetura de componentes, performance e padronização entre marcas.",
     "Sou bacharel em Sistemas de Informação pela Unifacisa, uma formação que combinou front-end e back-end (Java, Spring, Angular, SQL) com governança de TI e metodologias ágeis. Essa base me dá uma visão sistêmica das aplicações e facilita a comunicação com o time e a integração de APIs.",
     "Meu próximo passo é ganhar ainda mais profundidade técnica e assumir, aos poucos, mais responsabilidade sobre decisões de arquitetura e na condução de iniciativas do time.",
   ],

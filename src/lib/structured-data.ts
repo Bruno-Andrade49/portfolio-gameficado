@@ -14,7 +14,6 @@ export function structuredData(url: string): { "@context": string; "@graph": Nod
     url,
     image: `${url}${profile.photos.desk}`,
     sameAs: [profile.github, profile.linkedin].filter(Boolean),
-    worksFor: { "@type": "Organization", name: jobs[0].company },
     alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
     address: {
       "@type": "PostalAddress",
@@ -25,6 +24,8 @@ export function structuredData(url: string): { "@context": string; "@graph": Nod
     knowsAbout: attributes.map((a) => a.name),
   };
   if (profile.email) person.email = `mailto:${profile.email}`;
+  const currentJob = jobs.find((j) => j.current);
+  if (currentJob) person.worksFor = { "@type": "Organization", name: currentJob.company };
 
   return {
     "@context": "https://schema.org",

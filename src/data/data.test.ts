@@ -49,14 +49,22 @@ describe("vitrine de projetos", () => {
 });
 
 describe("experiência", () => {
-  it("cargo atual é Pleno na Single Software", () => {
+  it("Single Software é a experiência mais recente, encerrada em out/2026", () => {
     expect(jobs[0].company).toBe("Single Software");
-    expect(jobs[0].current).toBe(true);
+    expect(jobs[0].current).toBe(false);
+    expect(jobs[0].period).toBe("mai/2024 a out/2026");
     expect(jobs[0].roles.map((r) => r.title)).toEqual([
       "Desenvolvedor Front-end Pleno",
       "Desenvolvedor Front-end Júnior",
     ]);
-    expect(jobs[0].roles[0].end).toBeNull();
+    expect(jobs[0].roles[0].end).not.toBeNull();
+  });
+
+  it("sem emprego atual, nenhum texto fala no presente sobre a Single", () => {
+    expect(jobs.some((j) => j.current)).toBe(false);
+    expect(jobs.flatMap((j) => j.roles).some((r) => r.end === null)).toBe(false);
+    expect(profile.about.join(" ")).not.toMatch(/Hoje atuo/);
+    expect(profile.availability).toBe("Disponível para novas oportunidades");
   });
 
   it("depois vem a Impulse, com a galeria dos trabalhos de cliente", () => {

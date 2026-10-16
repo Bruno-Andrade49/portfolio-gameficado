@@ -37,20 +37,20 @@ export const jobs: Job[] = [
     company: "Single Software",
     team: "Time de Front-end",
     location: "Campina Grande, PB",
-    period: "mai/2024 até hoje",
-    current: true,
+    period: "mai/2024 a out/2026",
+    current: false,
     roles: [
       {
         title: "Desenvolvedor Front-end Pleno",
-        period: "mai/2025 até hoje",
+        period: "mai/2025 a out/2026",
         start: "2025-05-01T12:00:00",
-        end: null,
+        end: "2026-10-16T12:00:00",
         bullets: [
-          "Atuo na plataforma multi-marca da Single (Vue 3, Nuxt, TypeScript, Pinia, PrimeVue e Tailwind), com aplicações SSR de alto volume de tráfego.",
-          "Participo da evolução da arquitetura de configuração multi-marca, reduzindo o esforço de manutenção e de criação de novas marcas.",
-          "Contribuo com iniciativas de performance guiadas pelo Google Lighthouse: renderização lazy/idle, cache de dados em nível de sessão e otimização do carregamento de fontes.",
+          "Atuei na plataforma multi-marca da Single (Vue 3, Nuxt, TypeScript, Pinia, PrimeVue e Tailwind), com aplicações SSR de alto volume de tráfego.",
+          "Participei da evolução da arquitetura de configuração multi-marca, reduzindo o esforço de manutenção e de criação de novas marcas.",
+          "Contribuí com iniciativas de performance guiadas pelo Google Lighthouse: renderização lazy/idle, cache de dados em nível de sessão e otimização do carregamento de fontes.",
           "Desenvolvi componentes base do design system, reutilizados por todas as marcas.",
-          "Faço revisão de código no fluxo de entrega das demandas.",
+          "Fiz revisão de código no fluxo de entrega das demandas.",
         ],
       },
       {
@@ -145,7 +145,7 @@ export const languages: { name: string; level: string }[] = [
 /** Faixa de números do topo da home. */
 export const highlights: { value: string; label: string }[] = [
   { value: "Desde 2022", label: "construindo interfaces para a web" },
-  { value: "Pleno", label: "front-end na Single Software" },
+  { value: "Pleno", label: "front-end com foco em Vue e Nuxt" },
   { value: "Vue · Nuxt", label: "stack principal, com TypeScript" },
   { value: "Estudante", label: "Buscando sempre evoluir" },
 ];

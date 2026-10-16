@@ -8,7 +8,7 @@ export function ExperienceTimeline() {
       id="experiencia"
       eyebrow="Carreira"
       title="Experiência profissional"
-      intro="Quase 4 anos construindo produtos web. Hoje sou Pleno na Single Software, onde entrei como Júnior."
+      intro="Quase 4 anos construindo produtos web. Na Single Software, entrei como Júnior e fui promovido a Pleno."
     >
       <ol className="grid gap-10 border-l-2 border-line pl-6 sm:pl-10">
         {jobs.map((job) => (

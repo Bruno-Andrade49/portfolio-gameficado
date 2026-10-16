@@ -5,7 +5,7 @@ export const seo = {
   title: "Bruno Andrade | Desenvolvedor Front-end",
   titleTemplate: "%s | Bruno Andrade",
   description:
-    "Bruno Andrade, desenvolvedor front-end Pleno em Vue 3 e Nuxt na Single Software. Arquitetura, performance e SSR em uma plataforma multi-marca de alto tráfego. Experiência, projetos e contato.",
+    "Bruno Andrade, desenvolvedor front-end Pleno com foco em Vue 3 e Nuxt. Arquitetura, performance e SSR em plataformas multi-marca de alto tráfego. Disponível para novas oportunidades.",
   gameTitle: "Modo jogo",
   gameDescription:
     "A jornada de Bruno Andrade como dev em um mundo 3D: cada projeto do GitHub é uma fase para explorar.",

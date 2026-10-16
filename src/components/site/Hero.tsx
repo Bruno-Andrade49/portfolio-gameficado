@@ -10,7 +10,15 @@ export function Hero() {
       className="mx-auto grid max-w-6xl scroll-mt-28 gap-10 px-4 pb-16 pt-12 sm:px-8 sm:pt-20 md:grid-cols-[1.4fr_1fr] md:items-center"
     >
       <div>
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-text">{profile.location}</p>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-text">{profile.location}</p>
+          {profile.availability && (
+            <p className="flex items-center gap-2 font-mono text-xs text-muted" data-availability>
+              <span aria-hidden className="size-1.5 bg-accent-text motion-safe:animate-pulse" />
+              {profile.availability}
+            </p>
+          )}
+        </div>
         <h1 className="mt-3 font-pixel text-5xl leading-[0.95] sm:text-7xl">{profile.name}</h1>
         <p className="mt-4 text-xl text-text sm:text-2xl">{profile.role}</p>
         <p className="mt-1 font-mono text-sm text-muted">{profile.headline}</p>
